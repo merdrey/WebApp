@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="font.css">
+    <title>Работа с маршрутами</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li>
+                    <a href="ticket.html">Покупка билетов</a>
+                </li>
+                <li>
+                    <a href="train.html">Поезда</a>
+                </li>
+                <li class="active">
+                    <a href="route.html">Маршруты</a>
+                </li>
+                <li>
+                    <a href="station.html">Станции</a>
+                </li>
+                <li>
+                    <a href="landlist.html">Посадочный лист</a>
+                </li>
+                <li>
+                    <a href="boardstate.html">Посадочная ведомость</a>
+                </li>
+                <!-- <li>
+                    <a href="ticketjournal.html">Журнал билетов</a>
+                </li> -->
+            </ul>
+        </nav>
+    </header>
+    <span>
+        <button id="createRtBtn">
+            Создать маршрут
+        </button>
+        <button id="deleteRtBtn" disabled>
+            Удалить маршрут
+        </button>
+    </span>  
+    <ul id="routesList">
+
+    </ul>
+    <table id="timetable">
+
+    </table>
+    <form id="routeSt" name="routeSt" action="" method="post">
+        <label>
+            Станция: 
+            <select id="station" name="station" required>
+
+            </select>
+        </label> 
+        <label>
+            Тип станции:
+            <select name="type" id="sttype" required>
+                <option value="start">Начальная</option>
+                <option value="middle" selected>Промежуточная</option>
+                <option value="end">Конечная</option>
+            </select>
+        </label>
+        <label id="depdate">
+            Дата отправления:
+            <input id="depdateInp" name="departDate" type="date" required>
+        </label>
+        <label id="deptime">
+            Время отправления:
+            <input id="deptimeInp" name="departTime" type="time" required>
+        </label>
+        <label id="arrdate">
+            Дата прибытия:
+            <input id="arrdateInp" name="arriveDate" type="date" required>
+        </label>
+        <label id="arrtime">
+            Время прибытия:
+            <input id="arrtimeInp" name="arriveTime" type="time" required>
+        </label>
+        <button id="addStToRtBtn" type="submit" disabled>Добавить станцию</button>
+        <button id="upStToRtBtn" type="button" disabled>Изменить станцию</button>
+        <button id="delStToRtBtn" type="button" disabled>Удалить станцию</button>
+    </form>
+    <script type="text/javascript" src="route.js"></script>
+</body>
+</html>

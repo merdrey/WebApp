@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="font.css">
+    <title>Покупка билетов</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li class="active">
+                    <a href="ticket.html">Покупка билетов</a>
+                </li>
+                <li class="hidden">
+                    <a href="train.html">Поезда</a>
+                </li>
+                <li class="hidden">
+                    <a href="route.html">Маршруты</a>
+                </li>
+                <li class="hidden">
+                    <a href="station.html">Станции</a>
+                </li>
+                <li class="hidden">
+                    <a href="landlist.html">Посадочный лист</a>
+                </li>
+                <li class="hidden">
+                    <a href="boardstate.html">Посадочная ведомость</a>
+                </li>
+                <!-- <li class="hidden"> -->
+                    <!-- <a href="ticketjournal.html">Журнал билетов</a> -->
+                <!-- </li> -->
+                <li class="hidden">
+                    <a href="cabinet.html">Личный кабинет</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <span>
+        <select id="fromSt" name="depSt" required></select>
+        <select id="toSt" name="arrSt" required></select>
+        <input id="date" type="date" name="date" required></select>
+        <button id="searchBtn">Поиск</button>
+    </span>
+    <table id="schedule">
+
+    </table>
+    <div id="tableview">
+        <table id="vagonsTable">
+
+        </table>
+        <table id="seatsTable">
+
+        </table>
+    </div>
+    <div id="ticketForm" class="hidden">
+        <label>
+            Пассажир:
+            <select id="passList" required></select>
+        </label>
+        <span>
+            <button id="buyTicket">Купить билет</button>
+            <button id="addPass">Добавить нового пассажира</button>
+        </span>
+    </div>
+    <dialog id="passDialog">
+        <form id="passengercard" name="passenger" method="post" action="">
+            <label>
+                ФИО:
+                <input id="passInp" type="text" name="name" placeholder="Иванов Иван Иванович" required>
+            </label>
+            <label>
+                Дата рождения:
+                <input type="date" name="birthdate" required>
+            </label>
+            <label>
+                Паспортные данные:
+                <input type="text" name="data" placeholder="1234 123456" required>
+            </label>
+            <button type="submit">Добавить пассажира</button>
+        </form>
+    </dialog>
+    <dialog id="loginDialog">
+        <nav>
+            <ul>
+                <li id="log" class="active">Вход</li>
+                <li id="reg">Регистрация</li>
+            </ul>
+        </nav>
+        <form id="sign" method="post" action="">
+            <label>
+                Логин:
+                <input type="text" name="login" placeholder="username" min="4" required>
+            </label>
+            <label>
+                Пароль:
+                <input type="password" name="password" placeholder="password" min="4" required>
+            </label>
+            <label id="phoneInp" class="hidden">
+                Телефон:
+                <input type="tel" name="phone" placeholder="+79511234567">
+            </label>
+            <label id="emailInp" class="hidden">
+                Почта:
+                <input type="email" name="email" placeholder="noname@nomail.com">
+            </label>
+            <button id="signBtn" type="submit">Вход</button>
+        </form>
+    </dialog>
+    <script type="text/javascript" src="ticket.js"></script>
+</body>
+</html>

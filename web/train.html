@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="font.css">
+    <title>Работа с поездами</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li>
+                    <a href="ticket.html">Покупка билетов</a>
+                </li>
+                <li class="active">
+                    <a href="train.html">Поезда</a>
+                </li>
+                <li>
+                    <a href="route.html">Маршруты</a>
+                </li>
+                <li>
+                    <a href="station.html">Станции</a>
+                </li>
+                <li>
+                    <a href="landlist.html">Посадочный лист</a>
+                </li>
+                <li>
+                    <a href="boardstate.html">Посадочная ведомость</a>
+                </li>
+                <!-- <li> -->
+                    <!-- <a href="ticketjournal.html">Журнал билетов</a> -->
+                <!-- </li> -->
+            </ul>
+        </nav>
+    </header>
+    <form id="train" name="train" method="post" action="">
+        <label>
+            Тип поезда:
+            <select name="type" id="trType" required>
+                <option value="1" name="speed">Скоростной</option>
+                <option value="2" name="stand" selected>Стандартный</option>
+                <option value="3" name="brand">Фирменный</option>
+            </select>
+        </label>
+        <label>
+            Номер маршрута:
+            <select name="routeId" id="routeSelector" required>
+
+            </select>
+        </label>
+        <span>
+            <button id="createTrBtn" type="submit">
+                Создать поезд
+            </button>
+            <button id="updateTrBtn" type="button" disabled>
+                Обновить поезд
+            </button>
+            <button id="deleteTrBtn" type="button" disabled>
+                Удалить поезд
+            </button>
+        </span>
+    </form>
+    <div>
+        <ul id="trainList">
+            
+        </ul>
+    </div>
+    <dialog id="createVagon">
+        <form id="vagon" method="post" action="">
+            <label>
+                Укажите тип вагона:
+                <select name="type" id="vType" required>
+                    <option>Плацкарт</option>
+                    <option selected>Купе</option>
+                    <option>СВ</option>
+                    <option>Сидячий</option>
+                </select>
+            </label>
+            <span>
+                <button id="createVBtn" type="submit">
+                    Добавить вагон
+                </button>
+                <button id="closeForm" type="button">
+                    Закрыть форму
+                </button>
+            </span>
+        </form>
+    </dialog>
+    <dialog id="seatDialog">
+        <span>
+            <button id="deleteVBtn" type="button">Удалить вагон</button>
+            <button id="closeSeatForm" type="button">Закрыть форму</button>
+        </span>
+        <form id="seat" method="post" action="">
+            <label>
+                Укажите стоимость места:
+                <input id="seatPrice" type="number" name="price" min="500" max="20000" required>
+            </label>
+            <label>
+                Занято?:
+                <input id="seatStatus" type="checkbox" name="isBusy">
+            </label>
+            <span>
+                <button id="creatSBtn" type="submit">Добавить место</button>
+                <button id="updateSBtn" type="button" disabled>Обновить место</button>
+                <button id="deleteSBtn" type="button" disabled>Удалить место</button>
+            </span>
+        </form>
+        <table id="seatsTable">
+
+        </table>
+    </dialog>
+    <script type="text/javascript" src="train.js"></script>
+</body>
+</html>
